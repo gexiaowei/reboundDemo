@@ -9,16 +9,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Value->1"
-        android:id="@+id/val_one"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VALUE->0"
+        android:text="开始测试"
         android:id="@+id/val_zero"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -29,10 +20,10 @@
         android:layout_height="wrap_content"
         class="com.demo.vivian.test.Chart"
         android:id="@+id/view"
-        android:layout_below="@+id/val_one"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/val_zero"
-        android:layout_alignEnd="@+id/val_zero" />
+        android:layout_alignEnd="@+id/val_zero"
+        android:layout_below="@+id/val_zero" />
 </RelativeLayout>

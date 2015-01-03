@@ -98,9 +98,9 @@ public class Chart extends View implements SpringListener {
     }
 
     /**
-     * 初始化测试值
+     * 获取测试数据
      *
-     * @return
+     * @return 测试数据
      */
     private List<Float[]> getTestDatas(int maxLength) {
         List<Float[]> testdatas = new ArrayList<Float[]>();
@@ -114,6 +114,9 @@ public class Chart extends View implements SpringListener {
         return testdatas;
     }
 
+    /**
+     * 更新测试数据
+     */
     private List<Float[]> updataTest() {
         testDataLength += 3;
         if (testDataLength > 15) {
@@ -122,10 +125,18 @@ public class Chart extends View implements SpringListener {
         return getTestDatas(testDataLength);
     }
 
+
+    /**
+     * 测试数据用方法
+     */
+    public void setValue() {
+        setDatas(getTestDatas(testDataLength));
+    }
+
     /**
      * 设置数据
      *
-     * @param datas
+     * @param datas 数据
      */
     public void setDatas(List<Float[]> datas) {
         this.datas = datas;
@@ -173,7 +184,7 @@ public class Chart extends View implements SpringListener {
     /**
      * 计算需要绘制的Rect
      *
-     * @param coefficient
+     * @param coefficient 当前变化系数
      */
     private void calculateRects(float coefficient) {
         //TODO 做进一步优化 可以复用RectF
@@ -197,7 +208,6 @@ public class Chart extends View implements SpringListener {
             }
             rectFList.add(rectFs);
         }
-        //触发View更新
         invalidate();
     }
 
@@ -212,14 +222,6 @@ public class Chart extends View implements SpringListener {
             }
         }
         super.onDraw(canvas);
-    }
-
-    /**
-     * 测试数据用方法
-     * @param value
-     */
-    public void setValue(int value) {
-        setDatas(getTestDatas(testDataLength));
     }
 
     @Override
